@@ -16,7 +16,7 @@ CREATE TABLE jogo (
     tipo VARCHAR(10) NOT NULL,
     preco DECIMAL(10,2) NOT NULL,
     categoria VARCHAR(50) NOT NULL,
-    descrição VARCHAR(255),
+    descricao VARCHAR(255),
     id INT(11) NOT NULL,
     PRIMARY KEY(id)
 );
@@ -24,16 +24,19 @@ CREATE TABLE jogo (
 CREATE TABLE xbox(
     versao VARCHAR(30),
     kinect BIT,
+    id_jogo INT(11) NOT NULL,
     FOREIGN KEY(id_jogo) REFERENCES jogo(id)
 );
 
 CREATE TABLE playstation(
     versao VARCHAR(30),
+    id_jogo INT(11) NOT NULL,
     FOREIGN KEY(id_jogo) REFERENCES jogo(id)
 );
 
 CREATE TABLE computador(
     tamanho INT,
+    id_jogo INT(11) NOT NULL,
     FOREIGN KEY(id_jogo) REFERENCES jogo(id)
 );
 
@@ -42,15 +45,19 @@ CREATE TABLE forma_pagamento(
     debito BIT NOT NULL,
     credito BIT NOT NULL,
     desconto DECIMAL(10,2),
-    juros PERCENTAGE,
+    juros INT,
     nvezes INT(2),
-    id_pagamento INT
+    id_pagamento INT,
+    PRIMARY KEY(id_pagamento)
 );
 
 CREATE TABLE venda(
     quantidade INT NOT NULL,
     data_venda DATE,
-    FOREIGN KEY(cpf) REFERENCES cliente(cpf),
+    id_jogo INT(11) NOT NULL,
+    id_cpf INT(11) NOT NULL,
+    id_pagamento INT,
+    FOREIGN KEY(id_cpf) REFERENCES cliente(cpf),
     FOREIGN KEY(id_jogo) REFERENCES jogo(id),
     FOREIGN KEY(id_pagamento) REFERENCES forma_pagamento(id_pagamento)
 );
