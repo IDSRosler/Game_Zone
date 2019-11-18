@@ -1,0 +1,284 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	font-family: sans-serif, serif;
+	font-size: 15px;
+	background: #D3D3D3;
+}
+
+#principal{
+	width: auto;
+	height: auto;
+}
+
+#cabecalho{
+	width: auto;
+	height: 237px;
+	background: #D3D3D3;
+}
+
+#cabecalho_superior{
+	width: 100%;
+}
+
+#menu_cima{
+	width: 1400px;
+	height: 0;
+	background: #f4f4f4;
+	margin: 0 auto;
+	text-align: right;
+}
+
+#menu_cima ul{
+	padding-top: 12px;
+}
+
+#menu_cima ul li{
+	display: inline;
+	margin-left: 10px;
+}
+
+#menu_cima ul li a{
+	color: #2F4F4F;
+	text-decoration: none;	
+}
+
+#menu_cima ul li a:hover{
+	color: #FF8C00; 
+}
+
+#cabecalho_meio{
+	width: 100%;
+	height: 150px;
+	position: relative;
+}
+
+#cabecalho_meio h1{
+    font-family: 'Press Start 2P', cursive;
+    font-size: 60px;
+    padding-top: 40px;
+    padding-left: 200px;
+    text-shadow: 8px 5px 2px #000000;
+    color: #FF8C00;
+    width: 550px;
+}
+
+#cabecalho_inferior{
+	width: 100%;
+	background: #808080;
+	border-bottom: 2px solid #363636;
+	line-height: 40px;
+}
+
+#menu_principal{
+	width: 969px;
+	height: 40px;
+	margin: 0 auto;
+	padding-top: 5px;
+	text-align: center;
+}
+
+#menu_principal ul{
+	list-style: none;
+	font-family: "Trebuchet MS";
+}
+
+#menu_principal ul li{
+	display: inline;
+	margin-left: 5px;
+	padding: 5px 30px;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+#menu_principal ul li a{
+	color: #f4f4f4;
+	text-decoration: none;
+}
+
+#menu_principal ul li a:hover{
+	color: #FF8C00;
+}
+
+#lado_direito{
+	width: 1350px;
+	height: auto;
+	margin-top: 10px;
+	float: left;
+}
+
+#rodape{
+	width: 100%;
+}
+
+#rodape_2{
+	width: 100%;
+	height: 100px;
+}
+
+#caixa{
+	float: left;
+	width: 500px;
+	color: #f4f4f4;
+	margin-left: 350px;
+	padding-top: 15px;
+}
+
+.limpa{
+	clear: both;
+}
+
+.fundo_cinza{
+	background: #363636;
+}
+
+.sacola{
+	background: url(../imagens/carrinho.png) no-repeat top right;
+	background-size: 25px auto;
+	width: 500px;
+	height: 25px;
+	font-size: 15px;
+	position: absolute;
+	top: 10px;
+	right: 200px;
+	text-align: right;
+	padding-right: 40px;
+	color: #f4f4f4;
+}
+
+.busca{
+	position: absolute;
+	width: 600px;
+	height: 45px;
+	text-align: right;
+	top: 55px;
+	left: 1035px;
+	color: #f4f4f4;
+}
+
+.busca input[type=image]{
+	width: 25px;
+}
+
+.busca input[type=search]{
+	width: 500px;
+}
+
+.linha_vertical{
+	border-right: 2px solid #363636;
+}
+
+.banner{
+	width: 1600px;
+	height: auto;
+	margin: 0 auto;
+	background: #f4f4f4;
+	margin-top: 1px;
+}
+
+#corpo{
+	width: 1600px;
+	height: auto;
+	margin: 0 auto;
+	background: #f4f4f4;
+}
+
+.categorias{
+	width: 220px;
+	height: auto;
+	float: left;
+	margin-right: 10px;
+	border: 2px solid #363636;
+	font-weight: bold;
+	margin-top: 10px;
+}
+
+.categorias h2{
+	width: 210px;
+	height: 19px;
+	padding-left: 10px;
+	color: #f4f4f4;
+	font-size: 16px;
+}
+
+.categorias ul{
+	width: 100%;
+	list-style: none;
+	background: #F5F5F5;
+}
+
+.categorias ul li{
+	padding: 10px 0 10px 20px;
+	border-bottom: 2px solid #363636;	
+}
+
+.categorias ul li input[type="checkbox"]:hover{
+	cursor: pointer;
+}
+
+.vitrine{
+	margin: 10px 0;
+	padding: 5px;
+	width: 1350px;
+	height: auto;
+	border: 2px solid #363636;
+	background: #F5F5F5;
+}
+
+.vitrine ul{
+	width: 1340px;
+	height: auto;
+	padding: 2px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	list-style: none;
+}
+
+.titulo{
+	width: 1355px;
+	height: 21px;
+	padding-left: 10px;
+	margin-bottom: 10px;
+	color: #f4f4f4;
+}
+
+.vitrine li{
+	width: 310px;
+	margin: 10px;
+	padding-bottom: 10px;
+	text-align:	 center;
+	display: inline-block;
+	vertical-align: top;
+}
+
+.vitrine a{
+	font-size: 14px;
+	color: #363636;
+	text-decoration: none;
+}
+
+.vitrine figure{
+	margin-bottom: 10px;
+}
+
+.vitrine span{
+	color: #ff0000;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.vitrine input{
+	width: 150px;
+	height: 40px;
+	border-style: none;
+	background: url(../imagens/btncomprar.jpg) no-repeat ;
+	background-size: 150px;
+	margin-top: 10px;
+}
+
+.vitrine input:hover{
+	cursor: pointer;
+}
