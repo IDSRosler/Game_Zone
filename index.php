@@ -17,7 +17,7 @@
 		</section> <!--	fim div cabecalho -->
 
 		<section id="corpo">
-			<?php include_once("home.php"); ?>
+			<?php include_once("detalhes.php"); ?>
 		</section> <!--	fim div corpo -->
 
 		<footer id="rodape">
