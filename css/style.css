@@ -239,6 +239,10 @@ body{
 	list-style: none;
 }
 
+.vitrine figure img{
+	width: 150px;
+}
+
 .titulo{
 	width: 1355px;
 	height: 21px;

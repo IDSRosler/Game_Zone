@@ -10,15 +10,17 @@
 				<li><input type="checkbox" name="xbox"> XBox </li>
 				<li><input type="checkbox" name="computador"> Computador </li>
 			</ul>
-		</nav>	
+		</nav>
 		<h2 class="fundo_cinza"> Categorias </h2>
 		<nav>
 			<ul>
-				<li><input type="checkbox" name="acao"> Ação </li>
-				<li><input type="checkbox" name="aventura"> Aventura </li>
-				<li><input type="checkbox" name="sporte"> Esportes </li>
+				<form action="POST">
+					<li><input type="checkbox" name="acao" href="acao"> Ação </li>
+					<li><input type="checkbox" name="aventura"> Aventura </li>
+					<li><input type="checkbox" name="sporte"> Esportes </li>
+				</form>
 			</ul>
-		</nav>	
+		</nav>
 	</section>
 	<div id="lado_direito">
 		<h3 class="titulo fundo_cinza"> Lista de jogos </h3>
@@ -27,7 +29,7 @@
 				<li>
 					<a href="#">
 						<figure>
-							<img src="imagens/game.jpg" alt="Uncharted 4">
+							<img src="imagens/uncharted.jpg" alt="Uncharted 4">
 							<figcaption>Uncharted 4</figcaption>
 						</figure>
 						<span> RS 100,00 </span>
@@ -39,7 +41,7 @@
 				<li>
 					<a href="#">
 						<figure>
-							<img src="imagens/game.jpg" alt="Uncharted 4">
+							<img src="imagens/uncharted.jpg" alt="Uncharted 4">
 							<figcaption>Uncharted 4</figcaption>
 						</figure>
 						<span> RS 100,00 </span>
@@ -51,7 +53,7 @@
 				<li>
 					<a href="#">
 						<figure>
-							<img src="imagens/game.jpg" alt="Uncharted 4">
+							<img src="imagens/uncharted.jpg" alt="Uncharted 4">
 							<figcaption>Uncharted 4</figcaption>
 						</figure>
 						<span> RS 100,00 </span>
@@ -63,7 +65,7 @@
 				<li>
 					<a href="#">
 						<figure>
-							<img src="imagens/game.jpg" alt="Uncharted 4">
+							<img src="imagens/uncharted.jpg" alt="Uncharted 4">
 							<figcaption>Uncharted 4</figcaption>
 						</figure>
 						<span> RS 100,00 </span>
@@ -71,11 +73,11 @@
 							<input type="submit" value="">
 						</form>
 					</a>
-				</li>	
+				</li>
 				<li>
 					<a href="#">
 						<figure>
-							<img src="imagens/game.jpg" alt="Uncharted 4">
+							<img src="imagens/uncharted.jpg" alt="Uncharted 4">
 							<figcaption>Uncharted 4</figcaption>
 						</figure>
 						<span> RS 100,00 </span>
@@ -86,6 +88,5 @@
 				</li>
 			</ul>
 		</section>
-		
 	</div>
-</div>	
+</div>

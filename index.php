@@ -10,7 +10,7 @@
 	<script type="text/javascript" src="js/abas.js"></script>
 </head>
 <body>
-	<dir id="principal">
+	<div id="principal">
 
 		<section id="cabecalho">
 			<?php include_once("cabecalho.php"); ?>
@@ -24,6 +24,6 @@
 			<?php include_once("rodape.php"); ?>
 		</footer> <!--	fim div rodape -->
 
-	</dir> <!--	fim div principal -->
+	</div> <!--	fim div principal -->
 </body>
 </html>
