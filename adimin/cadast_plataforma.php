@@ -1,9 +1,9 @@
 <div id="cadastro_jogo">
     <div id="form">
-    <form action="classes/cad-categoria.php" method="POST">
+    <form action="classes/cad-plataforma.php" method="POST">
 
-        <label for="cat">Categoria</label>
-        <input type="text" class="form-control" id="cat" placeholder="Titulo" name="cat" required>
+        <label for="plat">Plataforma</label>
+        <input type="text" class="form-control" id="plat" placeholder="Titulo" name="plat" required>
 
         <div class="form-group">
             <label for="ativo">Ativo</label>

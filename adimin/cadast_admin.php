@@ -8,6 +8,9 @@
         <label for="email">Email</label>
         <input type="email" class="form-control" id="email" placeholder="nome@exemplo.com" name="email" required>
 
+        <label for="login">Login</label>
+        <input type="text" class="form-control" id="login" placeholder="Node de usuário" name="login" required>
+
         <label for="senha">Senha</label>
         <input type="password" class="form-control" id="senha" placeholder="Senha" name="senha" required>
 

@@ -149,7 +149,7 @@ body{
 #direito{
 	width: 1280px;
 	float: left;
-	height: 420px;
+	height: 900px;
 	margin: 5px 0 0 5px;
 	border: solid 1px #CCC;
 	background: url(../imagens/home.jpeg) no-repeat top left;
@@ -166,7 +166,6 @@ body{
 	text-shadow: 2px 2px 2px #000000;
 	font-size: 50px;
 	color: #FF8C00;
-	margin-top: 347px;
 	padding-top: 8px;
 	border: solid 2px #000000;
 	background: #f4f4f4;

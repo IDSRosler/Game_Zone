@@ -34,8 +34,10 @@
                     $pag[2] = "#";
                     $pag[3] = "cadast_categoria.php";
                     $pag[4] = "#";
-                    $pag[5] = "cadast_admin.php";
+                    $pag[5] = "cadast_plataforma.php";
                     $pag[6] = "#";
+                    $pag[7] = "cadast_admin.php";
+                    $pag[8] = "#";
 
                     if(!empty($link))
                     {
@@ -45,7 +47,7 @@
                         }
                         else
                         {
-                            include "home.php";
+                            include $pag[0];
                         }
                     }
                     else
