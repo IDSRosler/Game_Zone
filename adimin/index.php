@@ -27,17 +27,17 @@
                     }
                     else{
                         $link = 0;
-                    }            
+                    }
 
                     $pag[0] = "home.php";
-                    $pag[1] = "cadast_jogo.php";
-                    $pag[2] = "#";
-                    $pag[3] = "cadast_categoria.php";
-                    $pag[4] = "#";
-                    $pag[5] = "cadast_plataforma.php";
-                    $pag[6] = "#";
-                    $pag[7] = "cadast_admin.php";
-                    $pag[8] = "#";
+                    $pag[1] = "cadastro/cadast_jogo.php";
+                    $pag[2] = "list/list_edit_jogo.php";
+                    $pag[3] = "cadastro/cadast_categoria.php";
+                    $pag[4] = "list/list_edit_categoria.php";
+                    $pag[5] = "cadastro/cadast_plataforma.php";
+                    $pag[6] = "list/list_edit_plataforma.php";
+                    $pag[7] = "cadastro/cadast_admin.php";
+                    $pag[8] = "list/list_edit_admin.php";
 
                     if(!empty($link))
                     {

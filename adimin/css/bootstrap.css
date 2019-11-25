@@ -1514,7 +1514,10 @@ pre code {
 .table {
   width: 100%;
   margin-bottom: 1rem;
-  color: #212529;
+  margin-top: 30px;
+  color: #dee2e6;
+  border-radius: 20px;
+  text-align: center;
 }
 
 .table th,

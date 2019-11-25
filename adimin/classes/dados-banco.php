@@ -1,27 +1,55 @@
 <?php
-    include_once "conexaoMySQL.php";
+    include_once "classes/manipulacao_dados.php";
     // Dados da tabela categoria
-    class dados extends connectionMySQL
+    class dados
     {
-        private $campo;
-        private $tabela;
-        private $cmd;
+        private $con;
 
-
-        function get_categoria()
+        public function __construct()
         {
-            $this->tabela = "categoria";
-            $this->campo = "categoria";
-            $this->cmd = "SELECT * FROM categoria";
-            return self::execute($this->cmd);
+            $this->con = new data_Manipulation();
         }
 
-        function get_plataforma()
+        public function get_categoria()
         {
-            $this->tabela = "plataforma";
-            $this->campo = "plataforma";
-            $this->cmd = "SELECT * FROM plataforma";
-            return self::execute($this->cmd);
+            $this->con->set_table("categoria");
+            $this->con->set_fields("*");
+            return $this->con->select_from_table();
+        }
+
+        public function get_plataforma()
+        {
+            $this->con->set_table("plataforma");
+            $this->con->set_fields("*");
+            return $this->con->select_from_table();
+        }
+
+        public function list_jogo()
+        {
+            $this->con->set_table("jogo");
+            $this->con->set_fields("*");
+            return $this->con->select_from_table();
+        }
+
+        public function list_categoria()
+        {
+            $this->con->set_table("categoria");
+            $this->con->set_fields("*");
+            return $this->con->select_from_table();
+        }
+
+        public function list_plataforma()
+        {
+            $this->con->set_table("plataforma");
+            $this->con->set_fields("*");
+            return $this->con->select_from_table();
+        }
+
+        public function list_admin()
+        {
+            $this->con->set_table("administracao");
+            $this->con->set_fields("*");
+            return $this->con->select_from_table();
         }
     }
 ?>
