@@ -56,14 +56,25 @@ body{
 	position: relative;
 }
 
-#cabecalho_meio h1{
+#cabecalho_meio h1 {
     font-family: 'Press Start 2P', cursive;
     font-size: 60px;
     padding-top: 40px;
     padding-left: 200px;
     text-shadow: 8px 5px 2px #000000;
     color: #FF8C00;
-    width: 550px;
+	width: 550px;
+}
+
+#cabecalho_meio input[type = submit]{
+	width: 33px;
+	height: 33px;
+	background: url(../imagens/lupa.png) no-repeat;
+	background-size: 25px;
+	border: none
+}
+#cabecalho_meio input[type = submit]:hover{
+	cursor: pointer;
 }
 
 #cabecalho_inferior{
@@ -218,6 +229,19 @@ body{
 
 .categorias ul li input[type="checkbox"]:hover{
 	cursor: pointer;
+}
+
+.categorias input[type=submit]{
+	background: #1f1f14;
+	text-align: center;
+	width: 100%;
+	height: 30px;
+	color: #F5F5F5;
+}
+
+.categorias input[type=submit]:hover{
+	cursor: pointer;
+	background: #FF8C00;
 }
 
 .vitrine{

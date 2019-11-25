@@ -67,5 +67,17 @@
                 $this->msg = "Registro atualizado com sucesso";
             }
         }
+
+        public function select_from_table()
+        {
+            $this->command = "SELECT $this->fields FROM $this->table";
+            return self::execute($this->command);
+        }
+
+        public function select_from_table_search()
+        {
+            $this->command = "SELECT $this->fields FROM $this->table WHERE $this->table_value = '$this->search_value'";
+            return self::execute($this->command);
+        }
     }
 ?>
