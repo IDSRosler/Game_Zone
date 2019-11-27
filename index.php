@@ -18,7 +18,16 @@
 		</section> <!--	fim div cabecalho -->
 
 		<section id="corpo">
-			<?php include_once("home.php"); ?>
+			<?php
+				$link = (isset($_GET["jogo"])) ? true : false;
+
+				if($link){
+					include_once "detalhes.php";
+				}
+				else{
+					include_once "home.php";
+				}
+			?>
 		</section> <!--	fim div corpo -->
 
 		<footer id="rodape">

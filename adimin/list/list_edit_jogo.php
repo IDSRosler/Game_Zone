@@ -9,6 +9,7 @@
         <th scope="col">descricao</th>
         <th scope="col">conteudo</th>
         <th scope="col">ativo_jogo</th>
+        <th scope="col">unidades</th>
         <th scope="col">imagem_produto</th>
     </tr>
   </thead>
@@ -28,6 +29,7 @@
                         <td> $list[descricao] </td>
                         <td> $list[conteudo] </td>
                         <td> $list[ativo_jogo] </td>
+                        <td> $list[unidades] </td>
                         <td> $list[imagem_produto] </td>
                     </tr>
                 ";

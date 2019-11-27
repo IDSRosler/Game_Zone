@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Tempo de geração: 23-Nov-2019 às 21:05
+-- Tempo de geração: 27-Nov-2019 às 03:04
 -- Versão do servidor: 10.4.8-MariaDB
 -- versão do PHP: 7.1.33
 
@@ -82,6 +82,7 @@ CREATE TABLE `jogo` (
   `descricao` text NOT NULL,
   `conteudo` text NOT NULL,
   `ativo_jogo` varchar(1) NOT NULL,
+  `unidades` int(11) NOT NULL,
   `imagem_produto` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -89,10 +90,11 @@ CREATE TABLE `jogo` (
 -- Extraindo dados da tabela `jogo`
 --
 
-INSERT INTO `jogo` (`id_jogo`, `id_categoria`, `id_plataforma`, `titulo_jogo`, `preco`, `descricao`, `conteudo`, `ativo_jogo`, `imagem_produto`) VALUES
-(1, 'Ação', 'PlayStation', 'Jogo 1', '100,00', 'Jogo', 'CD', '1', 'imagens/jogo1.png'),
-(2, 'Esporte', 'Xbox', 'Jogo 2', '150,00', 'Jogo', 'Digital', '0', 'imagens/jogo2.png'),
-(3, 'Aventura', 'Computador', 'Mario', '150,00', 'Mario cart', 'CD', '1', 'imagens/mario.png');
+INSERT INTO `jogo` (`id_jogo`, `id_categoria`, `id_plataforma`, `titulo_jogo`, `preco`, `descricao`, `conteudo`, `ativo_jogo`, `unidades`, `imagem_produto`) VALUES
+(1, 'Ação', 'PlayStation', 'Jogo 1', '100,00', 'Jogo', 'CD', '1', 2, 'imagens/uncharted.jpg'),
+(2, 'Esporte', 'Xbox', 'Jogo 2', '150,00', 'Jogo', 'Digital', '1', 1, 'imagens/uncharted.jpg'),
+(3, 'Aventura', 'Computador', 'Mario', '150,00', 'Mario cart', 'CD', '1', 1, 'imagens/uncharted.jpg'),
+(4, 'Ação', 'PlayStation', 'Uncharted', '200,00', 'Jogo', 'CD', '1', 1, 'imagens/uncharted.jpg');
 
 -- --------------------------------------------------------
 
@@ -158,7 +160,7 @@ ALTER TABLE `administracao`
 -- AUTO_INCREMENT de tabela `jogo`
 --
 ALTER TABLE `jogo`
-  MODIFY `id_jogo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_jogo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

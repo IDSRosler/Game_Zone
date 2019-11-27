@@ -10,7 +10,7 @@
 				<li><input type="checkbox" name="xbox"> XBox </li>
 				<li><input type="checkbox" name="computador"> Computador </li>
 			</ul>
-		</nav>	
+		</nav>
 		<h2 class="fundo_cinza"> Categorias </h2>
 		<nav>
 			<ul>
@@ -18,36 +18,48 @@
 				<li><input type="checkbox" name="aventura"> Aventura </li>
 				<li><input type="checkbox" name="sporte"> Esportes </li>
 			</ul>
-		</nav>	
+		</nav>
 	</section>
 	<div id="lado_direito">
+		<?php
+			include_once "classes/dados-banco.php";
+			$con = new dados();
+			$titulo_jogo = (isset($_GET["jogo"])) ? $_GET["jogo"] : false;
+			$detalhes = $con->list_jogo();
+			while ($del = mysqli_fetch_assoc($detalhes))
+			{
+				if (!strcmp($del["titulo_jogo"], $titulo_jogo)){
+					$jogo = $del;
+					break;
+				}
+			}
+		?>
 		<section class="vitrine">
-			<dir id="cx_produto">
-				<a href="#"><img src="imagens/uncharted.jpg" alt="Uncharted 4" height="100%"></a>
-			</dir>
+			<div id="cx_produto">
+				<a href="#"><img src=<?php echo $jogo["imagem_produto"] ?> alt="Uncharted 4" height="100%"></a>
+			</div>
 			<div id="cx_titulo_produto">
-				<h1><a href="#"> Titulo do Jogo </a></h1>
+				<h1><a href=""> <?php echo $jogo["titulo_jogo"] ?> </a></h1>
 			</div>
-			<dir id="cx_preco_produto">
-				<span> Valor: </span><strong> R$ 100,00 </strong>
-			</dir>
+			<div id="cx_preco_produto">
+				<span> Valor: </span><strong> R$ <?php echo $jogo["preco"] ?> </strong>
+			</div>
 
-			<dir class="carac_plat_produto space_center">
-				<h3> Genero </h3>
-			</dir>
-			<dir class="carac_plat_produto">
-				<h4> Plataforma </h4>
-			</dir>
-			<div id="descricao_produto">
-				<h2> Descrição do jogo </h2>	
-				Esta é a sessão onde focará a descrição do jogo comtendo
-				caracteristicas, plataforma, pré-requisitos e etc...			
+			<div class="carac_plat_produto space_center">
+				<h3> <?php echo $jogo["id_categoria"] ?> </h3>
 			</div>
-			<dir id="comprar_produto">
+			<div class="carac_plat_produto">
+				<h4> <?php echo $jogo["id_plataforma"] ?> </h4>
+			</div>
+			<div id="descricao_produto">
+				<h2> Descrição do jogo </h2>
+				<?php echo $jogo["descricao"] ?>
+			</div>
+			<div id="comprar_produto">
 				<form action="">
 					<input type="submit" value="">
 				</form>
-			</dir>
+			</div>
 			<section id="abas-geral">
 				<ul class="menu">
 					<li><a href="#aba01"> Descrição </a></li>
@@ -58,7 +70,15 @@
 						<article id="descricao">
 							<h2> Descrição </h2>
 							<p>
-								Texto referente a descrição
+								<?php echo $jogo["descricao"] ?>
+							</p>
+						</article>
+					</div>
+					<div id="aba02" class="conteudo">
+						<article id="descricao">
+							<h2> Conteudo </h2>
+							<p>
+								<?php echo $jogo["conteudo"] ?>
 							</p>
 						</article>
 					</div>
@@ -66,4 +86,4 @@
 			</section>
 		</section>
 	</div>
-</dir>
+</div>
