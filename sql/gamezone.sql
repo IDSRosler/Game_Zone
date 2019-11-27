@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Tempo de geração: 27-Nov-2019 às 03:04
+-- Tempo de geração: 27-Nov-2019 às 21:09
 -- Versão do servidor: 10.4.8-MariaDB
 -- versão do PHP: 7.1.33
 
@@ -66,6 +66,33 @@ INSERT INTO `categoria` (`categoria`, `ativo_categoria`, `descricao_categoria`) 
 ('Aventura', '1', 'Jogos de aventura'),
 ('Esporte', '1', 'Jogos de esporte'),
 ('Terror', '1', 'Jogos de terror');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `clientes`
+--
+
+CREATE TABLE `clientes` (
+  `cpf` varchar(15) NOT NULL,
+  `nome_cliente` varchar(200) NOT NULL,
+  `email` varchar(200) NOT NULL,
+  `telefone` varchar(15) NOT NULL,
+  `rua` varchar(200) NOT NULL,
+  `cidade` varchar(200) NOT NULL,
+  `complemento` varchar(200) NOT NULL,
+  `estado` varchar(200) NOT NULL,
+  `login` varchar(200) NOT NULL,
+  `senha` varchar(300) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `clientes`
+--
+
+INSERT INTO `clientes` (`cpf`, `nome_cliente`, `email`, `telefone`, `rua`, `cidade`, `complemento`, `estado`, `login`, `senha`) VALUES
+('999.999.999.92', 'Nome teste 2', 'teste2@gmail.com', '(99)99999-9999', 'Alguma', 'Outra', '', 'AC', 'UserTeste', '$2y$10$TFv1N91h8FUkiEaKA3LOkO1XWZULpsDYitxFpAPPiVc1w8qziYX5q'),
+('999.999.999.99', 'Nome teste', 'teste@gmail.com', '(99)99999-9999', 'Alguma', 'Outra', '', 'AC', 'UserTeste', '$2y$10$P0c10rOxSyY0tAMJ924xFOSXs/jCP.KSYhrPGk2EI.EX/NVfaeAB2');
 
 -- --------------------------------------------------------
 
@@ -133,6 +160,12 @@ ALTER TABLE `administracao`
 --
 ALTER TABLE `categoria`
   ADD PRIMARY KEY (`categoria`);
+
+--
+-- Índices para tabela `clientes`
+--
+ALTER TABLE `clientes`
+  ADD PRIMARY KEY (`cpf`);
 
 --
 -- Índices para tabela `jogo`

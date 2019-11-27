@@ -6,7 +6,7 @@
 body{
 	font-family: sans-serif, serif;
 	font-size: 15px;
-	background: #D3D3D3;
+	background: rgb(12, 12, 12);
 }
 
 #principal{
@@ -17,7 +17,7 @@ body{
 #cabecalho{
 	width: auto;
 	height: 237px;
-	background: #D3D3D3;
+	background: #f4f4f4;
 }
 
 #cabecalho_superior{
@@ -27,7 +27,7 @@ body{
 #menu_cima{
 	width: 1400px;
 	height: 0;
-	background: #f4f4f4;
+	background: #808080;
 	margin: 0 auto;
 	text-align: right;
 }
@@ -42,7 +42,7 @@ body{
 }
 
 #menu_cima ul li a{
-	color: #2F4F4F;
+	color: #020202;
 	text-decoration: none;	
 }
 
@@ -53,13 +53,14 @@ body{
 #cabecalho_meio{
 	width: 100%;
 	height: 150px;
+	border-top: 2px solid #020202;
+	margin-top: 40px;
 	position: relative;
 }
 
 #cabecalho_meio h1 {
     font-family: 'Press Start 2P', cursive;
     font-size: 60px;
-    padding-top: 40px;
     padding-left: 200px;
     text-shadow: 8px 5px 2px #000000;
     color: #FF8C00;
@@ -79,8 +80,8 @@ body{
 
 #cabecalho_inferior{
 	width: 100%;
-	background: #808080;
-	border-bottom: 2px solid #363636;
+	background: #f4f4f4;
+	border-top: 2px solid #020202;
 	line-height: 40px;
 }
 
@@ -122,6 +123,10 @@ body{
 	float: left;
 }
 
+#lado_direito h3{
+	border: 2px solid #f4f4f4;
+}
+
 #rodape{
 	width: 100%;
 }
@@ -155,7 +160,7 @@ body{
 	font-size: 15px;
 	position: absolute;
 	top: 10px;
-	right: 200px;
+	right: 220px;
 	text-align: right;
 	padding-right: 40px;
 	color: #f4f4f4;
@@ -188,7 +193,8 @@ body{
 	height: auto;
 	margin: 0 auto;
 	background: #f4f4f4;
-	margin-top: 1px;
+	margin-top: 5px;
+	border: 2px solid #f4f4f4;
 }
 
 #corpo{
@@ -203,7 +209,7 @@ body{
 	height: auto;
 	float: left;
 	margin-right: 10px;
-	border: 2px solid #363636;
+	border: 2px solid #f4f4f4;
 	font-weight: bold;
 	margin-top: 10px;
 }
@@ -245,11 +251,10 @@ body{
 }
 
 .vitrine{
-	margin: 10px 0;
 	padding: 5px;
-	width: 1350px;
+	width: 1355px;
 	height: auto;
-	border: 2px solid #363636;
+	border: 2px solid #f4f4f4;
 	background: #F5F5F5;
 	float: left;
 }
@@ -518,4 +523,58 @@ ul.menu li.active, ul.menu li.active a:hover{
 	font-size: 16px;
 	text-align: justify;
 	padding: 10px 7px 5px 0;
+}
+
+.cad_banner{
+	width: 240px;
+	height: 800px;
+	float: left;
+	margin-right: 10px;
+	margin-top: 10px;
+	background: url(../imagens/cad_banner.jpg) no-repeat left top;
+	background-size: 100%;
+	border: 2px solid #f4f4f4;
+	margin-bottom: 10px;
+}
+ 
+.red{
+	width: 220px;
+	height: 610px;
+}
+
+.vitrine_cad{
+	padding: 30px;
+	width: 1310px;
+	height: auto;
+	background: #F5F5F5;
+	float: left;
+	border-radius: 10px;
+	margin: 20px 20px;
+}
+
+.vitrine_cad input, .vitrine_cad span, .vitrine_cad select{
+	border: 1px solid #363636;
+	color: #000000;
+}
+
+.vitrine_cad button{
+	background: #363636;
+	border: none;
+}
+
+.vitrine_cad button:hover{
+	background: #FF8C00;
+}
+
+.alin h1 {
+	font-size: 60px;
+	margin: 35px 20px;
+	width: 550px;
+}
+
+.linha{
+	width: 100%;
+	border-bottom: 2px dashed #808080;
+	padding: 5px;
+	margin-bottom: 10px;
 }

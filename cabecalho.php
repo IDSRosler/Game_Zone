@@ -3,7 +3,7 @@
 		<ul>
 			<li><a href="#"> Meu carrinho</a></li>
 			<li><a href="#"> Logar</a></li>
-			<li><a href="#"> Cadastrar</a></li>
+			<li><a href="cadastro.php"> Cadastrar</a></li>
 		</ul>
 	</nav>
 </div>
@@ -13,7 +13,6 @@
 	<section class="busca">
 		<form action="http://localhost/Game_Zone/" method="GET">
 			<label>
-				<span> Buscar </span>
 				<input type="search" name="pesquisa" id="pesquisa" placeholder="Pesquisar">
 				<input type="submit" value=""> 
 			</label>

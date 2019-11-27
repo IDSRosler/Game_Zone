@@ -2,23 +2,7 @@
 	<aside class="banner">
 		<img src="imagens/banner.jpg" width="100%">
 	</aside>
-	<section class="categorias">
-		<h2 class="fundo_cinza"> Plataformas </h2>
-		<nav>
-			<ul>
-				<li><input type="checkbox" name="playstation"> PlayStation </li>
-				<li><input type="checkbox" name="xbox"> XBox </li>
-				<li><input type="checkbox" name="computador"> Computador </li>
-			</ul>
-		</nav>
-		<h2 class="fundo_cinza"> Categorias </h2>
-		<nav>
-			<ul>
-				<li><input type="checkbox" name="acao"> Ação </li>
-				<li><input type="checkbox" name="aventura"> Aventura </li>
-				<li><input type="checkbox" name="sporte"> Esportes </li>
-			</ul>
-		</nav>
+	<section class="cad_banner red"></section>
 	</section>
 	<div id="lado_direito">
 		<?php
