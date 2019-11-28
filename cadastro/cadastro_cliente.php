@@ -21,7 +21,8 @@
     $con->set_table("clientes");
     $con->set_fields("cpf, nome_cliente, email, telefone, rua, cidade, complemento, estado, login, senha");
     $con->set_data("'$cpf','$nome','$email','$tel','$rua','$cid','$comp','$est','$user','$senha'");
-    $con->insert();
-
-    header("Location: http://localhost/Game_Zone/cadastro.php");
+   
+    if ($con->insert()){
+        echo "<script type=\"text/javascript\">alert(\"Registro gravado com sucesso.\");history.go(-1);</script>\n";
+    }   
 ?>

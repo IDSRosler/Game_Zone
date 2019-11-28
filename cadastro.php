@@ -8,7 +8,8 @@
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
-	<script type="text/javascript" src="js/abas.js"></script>
+    <script type="text/javascript" src="js/abas.js"></script>
+    <script type="text/javascript" src="js/alert.js"></script>
 </head>
 <body>
 	<div id="principal">
@@ -115,7 +116,7 @@
                             </div>
                         </div>
                         <div class="linha"></div>
-                        <button class="btn btn-primary" type="submit">Cadastrar</button>
+                        <button class="btn btn-primary" type="submit">Cadastrar </button>
                     </form>
                 </section>
             </div>

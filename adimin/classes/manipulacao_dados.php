@@ -47,7 +47,9 @@
             if(self::execute($this->command))
             {
                 $this->msg = "Registro gravado com sucesso";
+                return true;
             }
+            return false
         }
 
         public function delete()

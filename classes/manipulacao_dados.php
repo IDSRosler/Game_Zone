@@ -46,8 +46,10 @@
             $this->command = "INSERT INTO $this->table ($this->fields) VALUES ($this->data)";
             if(self::execute($this->command))
             {
-                $this->msg = "Registro gravado com sucesso";
+                $this->msg = "Registro gravado com sucesso!";
+                return true;
             }
+            return false;
         }
 
         public function delete()
