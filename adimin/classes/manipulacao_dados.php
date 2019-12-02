@@ -49,7 +49,7 @@
                 $this->msg = "Registro gravado com sucesso";
                 return true;
             }
-            return false
+            return false;
         }
 
         public function delete()
