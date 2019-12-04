@@ -23,7 +23,7 @@
             $lcat = strtolower($jogo['id_categoria']);
             $lplat = strtolower($jogo['id_plataforma']);
             foreach ($sel as $busca){
-                if ((!(strcmp($lcat, $busca)) or !(strcmp($lplat, $busca))) and !(strcmp($jogo['ativo_jogo'], "1")))
+                if ((!(strcmp($lcat, $busca)) xor !(strcmp($lplat, $busca))) and !(strcmp($jogo['ativo_jogo'], "1")))
                 {
                     list_game($jogo);
                     break;
