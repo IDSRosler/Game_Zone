@@ -12,7 +12,7 @@
     $est = $_POST["est"];
 
     $user = $_POST["user"];
-    $senha = $_POST["senha"];  
+    $senha = $_POST["senha"];
 
     $senha = password_hash("$senha", PASSWORD_BCRYPT);
     $flag = 0;
@@ -36,7 +36,7 @@
         $con->insert();
         echo "<script type=\"text/javascript\">alert(\"Registro gravado com sucesso.\");history.go(-1);</script>\n";
         header("Location: http://localhost/Game_Zone/");
-    }   
+    }
     else
     {
         echo "<script type=\"text/javascript\">alert(\"Erro ao gravar o registro, CPF já cadastrado.\");history.go(-1);</script>\n";
