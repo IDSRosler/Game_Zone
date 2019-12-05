@@ -2,7 +2,7 @@
 	<nav id="menu_cima">
 		<ul>
 			<li><a href="#"> Meu carrinho</a></li>
-			<li><a href="#"> Logar</a></li>
+			<li><a href="login.php"> Logar</a></li>
 			<li><a href="cadastro.php"> Cadastrar</a></li>
 		</ul>
 	</nav>
