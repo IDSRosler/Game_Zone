@@ -4,6 +4,7 @@
 	</aside>
 	<section class="categorias">
 		<form action="http://localhost/Game_Zone/" method="GET">
+			<?php if (isset($_GET["nome"])){ echo "<input type=hidden name=nome value=$user>";} ?>
 			<h2 class="fundo_cinza"> Plataformas </h2>
 			<nav>
 				<ul>

@@ -10,6 +10,8 @@
     $check[4] = (isset($_GET["aventura"])) ? "aventura" : false;
     $check[5] = (isset($_GET["esporte"])) ? "esporte" : false;
 
+    $user = (isset($_GET["nome"]))  ? $_GET["nome"] : false;
+
     $i = 0;
     foreach ($check as $teste){
         if($teste != false){
@@ -25,7 +27,7 @@
             foreach ($sel as $busca){
                 if ((!(strcmp($lcat, $busca)) xor !(strcmp($lplat, $busca))) and !(strcmp($jogo['ativo_jogo'], "1")))
                 {
-                    list_game($jogo);
+                    list_game($user,$jogo);
                     break;
                 }
             }
@@ -39,7 +41,7 @@
             $ljogo = strtolower($jogo['titulo_jogo']);
             if (!(strcmp($lpesq, $ljogo)) and !(strcmp($jogo['ativo_jogo'], "1")))
             {
-                list_game($jogo);
+                list_game($user,$jogo);
             }
         }
     }
@@ -48,29 +50,52 @@
         {
             if (!(strcmp($jogo['ativo_jogo'], "1")))
             {
-                list_game($jogo);
+                list_game($user,$jogo);
             }
         }
     }
 
-    function list_game($jogo)
+    function list_game($user,$jogo)
     {
-        echo "
-            <li>
-                <a href='?jogo=$jogo[titulo_jogo]'>
-                    <figure>
-                        <img src=$jogo[imagem_produto] alt=$jogo[titulo_jogo]>
-                        <figcaption>$jogo[titulo_jogo]</figcaption>
-                    </figure>
-                    <h4> Categoria: $jogo[id_categoria] </h4>
-                    <h4> Platafoema: $jogo[id_plataforma] </h4>
-                    <h4> Unidades: $jogo[unidades] </h4><br>
-                    <span> RS $jogo[preco] </span>
-                    <form action=''>
-                        <input type='submit' value=''>
-                    </form>
-                </a>
-            </li>
-        ";
+        if ($user)
+        {
+            echo "
+                <li>
+                    <a href='?nome=$user&jogo=$jogo[titulo_jogo]'>
+                        <figure>
+                            <img src=$jogo[imagem_produto] alt=$jogo[titulo_jogo]>
+                            <figcaption>$jogo[titulo_jogo]</figcaption>
+                        </figure>
+                        <h4> Categoria: $jogo[id_categoria] </h4>
+                        <h4> Platafoema: $jogo[id_plataforma] </h4>
+                        <h4> Unidades: $jogo[unidades] </h4><br>
+                        <span> RS $jogo[preco] </span>
+                        <form action=''>
+                            <input type='submit' value=''>
+                        </form>
+                    </a>
+                </li>
+            ";
+        }
+        else
+        {
+            echo "
+                <li>
+                    <a href='?jogo=$jogo[titulo_jogo]'>
+                        <figure>
+                            <img src=$jogo[imagem_produto] alt=$jogo[titulo_jogo]>
+                            <figcaption>$jogo[titulo_jogo]</figcaption>
+                        </figure>
+                        <h4> Categoria: $jogo[id_categoria] </h4>
+                        <h4> Platafoema: $jogo[id_plataforma] </h4>
+                        <h4> Unidades: $jogo[unidades] </h4><br>
+                        <span> RS $jogo[preco] </span>
+                        <form action=''>
+                            <input type='submit' value=''>
+                        </form>
+                    </a>
+                </li>
+            ";
+        }
     }
 ?>

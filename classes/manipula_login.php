@@ -14,7 +14,7 @@
     while ($cliente = mysqli_fetch_assoc($clientes))
     {
         if (!strcmp($cliente["login"], $nome) and password_verify($senha, $cliente["senha"])){
-            header("Location: http://localhost/Game_Zone/");
+            header("Location: http://localhost/Game_Zone/?nome=$nome");
             exit;
         }
     }
