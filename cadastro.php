@@ -122,7 +122,7 @@
             </div>
 		</section> <!--	fim div corpo -->
 
-		<footer id="rodape">
+		<footer id="rodape" class="baixo ajuste_padding">
 			<?php include_once("rodape.php"); ?>
 		</footer> <!--	fim div rodape -->
 

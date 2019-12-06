@@ -9,7 +9,7 @@
 			}
 		?>
 		<ul>
-			<li><a href="#"> Meu carrinho</a></li>
+			<li><a href="carrinho.php<?php if (isset($_GET["nome"])){ echo "?nome=$_GET[nome]"; } ?>"> Meu carrinho</a></li>
 			<li><a href="login.php"> Logar</a></li>
 			<li><a href="cadastro.php"> Cadastrar</a></li>
 		</ul>
@@ -17,7 +17,7 @@
 </div>
 <div id="cabecalho_meio" class="fundo_cinza">
 	<h1> GameZone </h1>
-	<p class="sacola"> Nenhum ítem em seu carrinho de compras </p>
+	<p class="sacola"> 0 Itens </p>
 	<section class="busca">
 		<form action="http://localhost/Game_Zone/" method="GET">
 			<?php if (isset($_GET["nome"])){ echo "<input type=hidden name=nome value=$user>";} ?>

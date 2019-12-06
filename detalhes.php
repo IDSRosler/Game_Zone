@@ -40,7 +40,9 @@
 				<?php echo $jogo["descricao"] ?>
 			</div>
 			<div id="comprar_produto">
-				<form action="classes/comprar.php">
+				<form action="classes/comprar.php" method="POST">
+					<input type='hidden' name='nome' value='<?php echo "$user"; ?>' >
+                    <input type='hidden' name='jogo' value='<?php echo "$jogo[titulo_jogo]" ?>'>
 					<input type="submit" value="">
 				</form>
 			</div>

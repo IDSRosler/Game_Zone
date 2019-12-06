@@ -7,6 +7,7 @@ body{
 	font-family: sans-serif, serif;
 	font-size: 15px;
 	background-image: linear-gradient(#000000, #ffffff);
+	min-height: 850px;
 }
 
 #principal{
@@ -653,4 +654,14 @@ ul.menu li.active, ul.menu li.active a:hover{
 
 .login_preencher{
 	padding: 20px 10px;
+}
+
+.baixo{
+	position:fixed;
+	bottom: 0;
+}
+
+.ajuste_padding #caixa{
+	height: 90px;
+	margin-bottom: 0;
 }

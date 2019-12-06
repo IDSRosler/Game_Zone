@@ -3,8 +3,11 @@
 
     $nome = (isset($_POST["nome"])) ? $_POST["nome"]: false;
     $jogo = (isset($_POST["jogo"])) ? $_POST["jogo"]: false;
+    
     $flag = false;
 
+    $time = time();
+    $data = date("y/m/d");
     $con = new data_Manipulation();
 
     // CLIENTES
@@ -45,8 +48,8 @@
                         $con->update();
                         // INSERIR NO CARRINHO
                         $con->set_table("carrinho");
-                        $con->set_fields("id_cliente, id_jogo");
-                        $con->set_data("'$id_cliente','$id_jogo'");
+                        $con->set_fields("id_cliente, id_jogo, data_compra");
+                        $con->set_data("'$id_cliente','$id_jogo', '$data'");
                         $con->insert();
                         echo "<script type=\"text/javascript\">alert(\"Seu produto foi adicionado ao carrinho, muito obrigado pela compra.\");history.go(-1);</script>\n";
                         break;
