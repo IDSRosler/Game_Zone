@@ -23,12 +23,12 @@
 			<?php if (isset($_GET["nome"])){ echo "<input type=hidden name=nome value=$user>";} ?>
 			<label>
 				<input type="search" name="pesquisa" id="pesquisa" placeholder="Pesquisar">
-				<input type="submit" value=""> 
+				<input type="submit" value="">
 			</label>
 		</form>
 	</section>
 </div>
-<div id="cabecalho_inferior"> 
+<div id="cabecalho_inferior">
 	<nav id="menu_principal">
 		<ul>
 			<li class="linha_vertical"><a href="http://localhost/Game_Zone/<?php if (isset($_GET["nome"])){echo "?nome=$user";}?>"> Home </a></li>

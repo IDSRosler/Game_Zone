@@ -40,7 +40,7 @@
 				<?php echo $jogo["descricao"] ?>
 			</div>
 			<div id="comprar_produto">
-				<form action="">
+				<form action="classes/comprar.php">
 					<input type="submit" value="">
 				</form>
 			</div>

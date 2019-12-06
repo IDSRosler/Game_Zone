@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Tempo de geração: 27-Nov-2019 às 21:09
+-- Tempo de geração: 06-Dez-2019 às 04:49
 -- Versão do servidor: 10.4.8-MariaDB
 -- versão do PHP: 7.1.33
 
@@ -42,7 +42,27 @@ CREATE TABLE `administracao` (
 
 INSERT INTO `administracao` (`id_admin`, `nome`, `email`, `login`, `senha`) VALUES
 (1, 'Igor Rosler', 'igorsouzarosler@gmail.com', 'IDSRosler', '$2y$10$JGO1Dd5tFOoMXAnrpMVh8O9ffS/qKktP.wVoV8cJnJfybPXv.A.vm'),
-(2, 'Admin 2', 'admin@exemplo.com', 'Admin2', '$2y$10$/jJ0.6UdSAFacgueZGTlPOVvIbk6ZeKue0S/s1KzgOsYmWcoQIYwm');
+(2, 'Admin 2', 'admin@exemplo.com', 'Admin2', '$2y$10$/jJ0.6UdSAFacgueZGTlPOVvIbk6ZeKue0S/s1KzgOsYmWcoQIYwm'),
+(3, 'Igor de Souza Rosler', 'idsrosler@inf.ufpel.edu.br', 'IDSRosler', '$2y$10$38lgZK3ZQLg536Qp6c/JX.js3sQ6/EO4xnYzkU/jVgHJX4jLgN4AG');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `carrinho`
+--
+
+CREATE TABLE `carrinho` (
+  `id_carrinho` int(11) NOT NULL,
+  `id_cliente` varchar(15) NOT NULL,
+  `id_jogo` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Extraindo dados da tabela `carrinho`
+--
+
+INSERT INTO `carrinho` (`id_carrinho`, `id_cliente`, `id_jogo`) VALUES
+(1, '036.743.570-54', 4);
 
 -- --------------------------------------------------------
 
@@ -91,6 +111,7 @@ CREATE TABLE `clientes` (
 --
 
 INSERT INTO `clientes` (`cpf`, `nome_cliente`, `email`, `telefone`, `rua`, `cidade`, `complemento`, `estado`, `login`, `senha`) VALUES
+('036.743.570-54', 'Igor Rosler', 'idsrosler@inf.edu.ufpel.com', '(53) 99999-9999', 'Dos Bobos', 'Nenhuma', '', 'RS', 'IDSRosler', '$2y$10$VCpX7zaY5Gi5LEtkRBM5du/gE0SFTVJA6ZBvIj5AoI9kO53dKK3J2'),
 ('999.999.999.92', 'Nome teste 2', 'teste2@gmail.com', '(99)99999-9999', 'Alguma', 'Outra', '', 'AC', 'UserTeste', '$2y$10$TFv1N91h8FUkiEaKA3LOkO1XWZULpsDYitxFpAPPiVc1w8qziYX5q'),
 ('999.999.999.99', 'Nome teste', 'teste@gmail.com', '(99)99999-9999', 'Alguma', 'Outra', '', 'AC', 'UserTeste', '$2y$10$P0c10rOxSyY0tAMJ924xFOSXs/jCP.KSYhrPGk2EI.EX/NVfaeAB2');
 
@@ -118,18 +139,16 @@ CREATE TABLE `jogo` (
 --
 
 INSERT INTO `jogo` (`id_jogo`, `id_categoria`, `id_plataforma`, `titulo_jogo`, `preco`, `descricao`, `conteudo`, `ativo_jogo`, `unidades`, `imagem_produto`) VALUES
-(1, 'Ação', 'PlayStation', 'Uncharted', '200,00', 'Jogo', 'CD', '1', 1, 'imagens/uncharted.jpg'),
-(2, 'Aventura', 'Computador', 'Assassins Creed Origins', '150,00', 'Os segredos mais misteriosos do Egito Antigo serão lançados na extensão The Curse Of the Pharaohs, incluída no Season Pass de Assassins Creed Origins. \r\nViaje com Bayek para a cidade de Tebas depois que ele recebe relatos de eventos misteriosos. Após sua chegada, Bayek descobre que uma maldição desceu sobre a região, transformando Tebas em um pesadelo. \r\nPara suspender essa maldição, Bayek deve investigar sua causa enquanto luta contra bestas que antes se acreditava serem apenas lendas. \r\nEsta segunda expansão traz novo conteúdo para Assassins Creed Origins com novas missões, personagens e inimigos da mitologia egípcia. \r\nLute com escorpiões gigantes, guerreiros Anúbis e os animais mais poderosos do Egito em uma região totalmente nova.\r\n', 'Digital', '1', 1, 'Jogos_PC/Assassins.jpg'),
-(3, 'Ação', 'Computador', 'Call of Duty 4', '200,00', 'Call of Duty 4: Modern Warfare, o thriller de ação da equipe premiada da Infinity Ward, os criadores da série Call of Duty, \r\noferece a experiência de ação mais intensa e cinematográfica de todos os tempos.\r\nArmado com um arsenal de poder de fogo avançado e poderoso nos dias de hoje, os jogadores são transportados para locais perigosos \r\nao redor do mundo para enfrentar um grupo inimigo desonesto que ameaça o mundo. \r\nComo um soldado da Marinha dos EUA e da Marinha britânica lutando por uma história que se desenrola cheia de reviravoltas, \r\nos jogadores usam tecnologia sofisticada, poder de fogo superior e ataques aéreos e terrestres \r\ncoordenados em um campo de batalha onde velocidade, precisão e comunicação são essenciais para a vitória.', 'CD', '1', 1, 'Jogos_PC/Call_of_Duty_4.jpg'),
-(4, 'Esporte', 'Computador', 'DiRT Rally 2.0', '100,00', 'O DiRT Rally 2.0 desafia você a percorrer uma seleção de locais icônicos de ralis de todo o mundo, \r\nnos veículos off-road mais emblemáticos já feitos, sabendo que o menor erro pode terminar seu estágio. \r\nVocê precisará confiar em seus instintos com a experiência off-road mais imersiva e verdadeiramente focada \r\nde todos os tempos, incluindo um novo modelo de manuseio autêntico, escolha de pneus e degradação da superfície.\r\n\r\nPonha seu carro de rally em ambientes off-road da vida real na Nova Zelândia, Argentina, Espanha, Polônia, Austrália e \r\nEUA, com apenas seu co-piloto e instinto para guiá-lo.', 'Digital', '1', 1, 'Jogos_PC/DiRT_Rally_2.0.jpg'),
-(5, 'Aventura', 'Computador', 'Dragon Age Inquisition', '80,00', 'Você é o inquisidor, encarregado de salvar o povo de Thedas da beira do caos e de uma série de inimigos temíveis. \r\nA Edição do Jogo do Ano vem com todos os itens a seguir.\r\n\r\nCaracterísticas principais:\r\n\r\nDragon Age: Inquisition game. Torne-se o inquisidor. Faça escolhas importantes, forme relacionamentos e explore \r\nmundos incríveis com um personagem de sua própria criação.\r\n\r\nMandíbulas de Hakkon: Descubra o destino do Inquisidor anterior. O que aconteceu com o dragão que ele perseguiu? \r\nExplore um deserto extenso e seus residentes ferozmente independentes, os caçadores conhecidos como Avvar.\r\n\r\nO descendente: Enfrente o seu caminho nas Estradas Profundas e ouse lutar contra o terrível e sombrio Darkspawn\r\nem um mundo vasto sob Thedas. Descubra a razão por trás dos terremotos que ameaçam destruir Thedas em pedaços.\r\n\r\nInvasor: A aventura ainda não acabou. Derrote o tremendo mal determinado a destruir Thedas. Esta é sua missão final, \r\nInquisidor. Sucesso a todo custo.', 'CD', '1', 1, 'Jogos_PC/Dragon_Age_Inquisition.jpg'),
-(6, 'Ação', 'Computador', 'Combo Far Cry', '300,00', 'Far Cry 5 Gold Edition\r\nA Gold Edition inclui o jogo, o Digital Deluxe Pack e o Season Pass.\r\nBem-vindo ao Hope County, Montana, terra dos livres e corajosos, \r\nmas também lar de um culto fanático do dia do juízo final conhecido como Projeto no Portão do Éden. \r\nLevante-se com o líder do culto Joseph Seed, e seus irmãos, os Arautos, para acender o fogo da resistência \r\ne libertar a comunidade sitiada.\r\n\r\nFar Cry New Dawn Deluxe Edition\r\nAtualize para a Deluxe Edition e receba o Digital Deluxe Pack.\r\nMergulhe em um vibrante e pós-apocalíptico Hope County, Montana, transformado, \r\n17 anos após uma catástrofe nuclear global.\r\nJunte-se a outros sobreviventes e lidere a luta contra a perigosa nova ameaça, \r\nos Highwaymen e seus implacáveis ​​líderes, The Twins, enquanto eles tentam assumir \r\nos últimos recursos restantes.', 'CD', '1', 1, 'Jogos_PC/Far_Cry_Novo_amanhecer_e_Far_Cry_5.jpg'),
-(7, 'Esporte', 'Computador', 'Football Manager 2020', '200,00', 'Use bem suas opiniões e faça as coisas do seu jeito no seu clube nesta temporada. \r\nCada decisão conta no Football Manager 2020 com novos recursos e uma mecânica de jogo aprimorada, adicionando dimensões \r\nnovas e autênticas, capacitando os gerentes a assumir uma maior responsabilidade pelo destino deles e do time. \r\nComo você chega ao topo depende de você.\r\nVocê será o proprietário de suas decisões e das consequências que elas trazem.', 'Digital', '1', 1, 'Jogos_PC/Football.jpg'),
-(8, 'Aventura', 'Computador', 'Game Minecraft', '150,00', 'Minecraft é um jogo sobre colocar blocos e aventuras. Explore mundos gerados aleatoriamente e construa coisas incríveis, desde a mais simples das casas até o maior dos castelos. Jogue no Modo Criativo com recursos ilimitados ou no Modo Sobrevivência, defenda-se de monstros e mergulhe fundo no mundo para descobrir os minérios mais raros. Faça tudo isso sozinho ou trabalhe em conjunto com seus amigos pela internet. Construa, crie e explore', 'Digital', '1', 1, 'Jogos_PC/Minecraft.jpg'),
-(9, 'Esporte', 'Computador', 'MXGP 3', '200,00', 'A nova edição MXGP, baseada na temporada de 2016, oferece ao jogador uma experiência de jogo dinâmica e cada vez mais agradável, \r\ngraças a uma série de gráficos e técnicas inovadoras introduzidas pelo novo mecanismo gráfico \r\nUnreal Engine 4, que levará a experiência do jogo a uma surpreendente novo nível.', 'CD', '1', 1, 'Jogos_PC/MXGP3.jpg'),
-(10, 'Esporte', 'Computador', 'NFL 20', '90,00', 'Seja o cara de uma franquia da NFL, onde as decisões que você toma importam em sua jornada para se tornar um Superstar da NFL. \r\nCrie seu próprio College Quarterback para disputar os playoffs do College Football National Championship e o NFL \r\nCombine para ter uma chance no NFL Draft e ser o rosto de uma franquia em um novo e personalizado modo de campanha de carreira centrado em você. \r\nDepois de selecionado para uma equipe, participe do novo Scenario Engine de Madden, que gera cenários jogáveis ​​personalizados, eventos e desafios \r\ndinâmicos que constroem a história de sua carreira exclusiva na NFL.', 'Digital', '1', 1, 'Jogos_PC/NFL.jpg'),
-(11, 'Ação', 'Computador', 'The Witcher 3', '250,00', 'A edição de The Witcher 3: Caça Selvagem do Ano reúne o jogo base e todo o conteúdo adicional lançado até o momento.\r\nInclui as expansões Hearts of Stone e Blood & Wine, que oferecem 50 horas de histórias adicionais, além de novos recursos \r\ne novas áreas que expandem o mundo explorável em mais de um terço!\r\nOferece acesso a todo o conteúdo adicional lançado até o momento, incluindo armas, armaduras, missões secundárias, modos de jogo e novas cartas GWENT!\r\nApresenta todas as atualizações técnicas e visuais, bem como uma nova interface do usuário completamente redesenhada \r\ncom base no feedback dos membros da Comunidade Witcher.', 'CD', '1', 1, 'Jogos_PC/Witcher_3.jpg');
-
+(4, 'Ação', 'PlayStation', 'Uncharted', '200,00', 'Jogo', 'CD', '1', 1, 'Jogos_Play/uncharted.jpg'),
+(7, 'Aventura', 'Computador', 'Assassins Creed Origins', '150,00', 'Os segredos mais misteriosos do Egito Antigo serão lançados na extensão The Curse Of the Pharaohs, incluída no Season Pass de Assassins Creed Origins. \r\nViaje com Bayek para a cidade de Tebas depois que ele recebe relatos de eventos misteriosos. Após sua chegada, Bayek descobre que uma maldição desceu sobre a região, transformando Tebas em um pesadelo. \r\nPara suspender essa maldição, Bayek deve investigar sua causa enquanto luta contra bestas que antes se acreditava serem apenas lendas. \r\nEsta segunda expansão traz novo conteúdo para Assassins Creed Origins com novas missões, personagens e inimigos da mitologia egípcia. \r\nLute com escorpiões gigantes, guerreiros Anúbis e os animais mais poderosos do Egito em uma região totalmente nova.\r\n', 'Digital', '1', 1, 'Jogos_PC/Assassins.jpg'),
+(8, 'Ação', 'Computador', 'Call of Duty 4', '200,00', 'Call of Duty 4: Modern Warfare, o thriller de ação da equipe premiada da Infinity Ward, os criadores da série Call of Duty, \r\noferece a experiência de ação mais intensa e cinematográfica de todos os tempos.\r\nArmado com um arsenal de poder de fogo avançado e poderoso nos dias de hoje, os jogadores são transportados para locais perigosos \r\nao redor do mundo para enfrentar um grupo inimigo desonesto que ameaça o mundo. \r\nComo um soldado da Marinha dos EUA e da Marinha britânica lutando por uma história que se desenrola cheia de reviravoltas, \r\nos jogadores usam tecnologia sofisticada, poder de fogo superior e ataques aéreos e terrestres \r\ncoordenados em um campo de batalha onde velocidade, precisão e comunicação são essenciais para a vitória.', 'CD', '1', 1, 'Jogos_PC/Call_of_Duty_4.jpg'),
+(9, 'Esporte', 'Computador', 'DiRT Rally 2.0', '100,00', 'O DiRT Rally 2.0 desafia você a percorrer uma seleção de locais icônicos de ralis de todo o mundo, \r\nnos veículos off-road mais emblemáticos já feitos, sabendo que o menor erro pode terminar seu estágio. \r\nVocê precisará confiar em seus instintos com a experiência off-road mais imersiva e verdadeiramente focada \r\nde todos os tempos, incluindo um novo modelo de manuseio autêntico, escolha de pneus e degradação da superfície.\r\n\r\nPonha seu carro de rally em ambientes off-road da vida real na Nova Zelândia, Argentina, Espanha, Polônia, Austrália e \r\nEUA, com apenas seu co-piloto e instinto para guiá-lo.', 'Digital', '1', 1, 'Jogos_PC/DiRT_Rally_2.0.jpg'),
+(11, 'Ação', 'Computador', 'Combo Far Cry', '300,00', 'Far Cry 5 Gold Edition\r\nA Gold Edition inclui o jogo, o Digital Deluxe Pack e o Season Pass.\r\nBem-vindo ao Hope County, Montana, terra dos livres e corajosos, \r\nmas também lar de um culto fanático do dia do juízo final conhecido como Projeto no Portão do Éden. \r\nLevante-se com o líder do culto Joseph Seed, e seus irmãos, os Arautos, para acender o fogo da resistência \r\ne libertar a comunidade sitiada.\r\n\r\nFar Cry New Dawn Deluxe Edition\r\nAtualize para a Deluxe Edition e receba o Digital Deluxe Pack.\r\nMergulhe em um vibrante e pós-apocalíptico Hope County, Montana, transformado, \r\n17 anos após uma catástrofe nuclear global.\r\nJunte-se a outros sobreviventes e lidere a luta contra a perigosa nova ameaça, \r\nos Highwaymen e seus implacáveis ​​líderes, The Twins, enquanto eles tentam assumir \r\nos últimos recursos restantes.', 'CD', '1', 1, 'Jogos_PC/Far_Cry_Novo_amanhecer_e_Far_Cry_5.jpg'),
+(12, 'Esporte', 'Computador', 'Football Manager 2020', '200,00', 'Use bem suas opiniões e faça as coisas do seu jeito no seu clube nesta temporada. \r\nCada decisão conta no Football Manager 2020 com novos recursos e uma mecânica de jogo aprimorada, adicionando dimensões \r\nnovas e autênticas, capacitando os gerentes a assumir uma maior responsabilidade pelo destino deles e do time. \r\nComo você chega ao topo depende de você.\r\nVocê será o proprietário de suas decisões e das consequências que elas trazem.', 'Digital', '1', 1, 'Jogos_PC/Football.jpg'),
+(13, 'Aventura', 'Computador', 'Minecraft Full Game', '150,00', 'Minecraft é um jogo sobre colocar blocos e aventuras. Explore mundos gerados aleatoriamente e construa coisas incríveis, desde a mais simples das casas até o maior dos castelos. Jogue no Modo Criativo com recursos ilimitados ou no Modo Sobrevivência, defenda-se de monstros e mergulhe fundo no mundo para descobrir os minérios mais raros. Faça tudo isso sozinho ou trabalhe em conjunto com seus amigos pela internet. Construa, crie e explore', 'Digital', '1', 1, 'Jogos_PC/Minecraft.jpg'),
+(14, 'Esporte', 'Computador', 'MXGP 3', '200,00', 'A nova edição MXGP, baseada na temporada de 2016, oferece ao jogador uma experiência de jogo dinâmica e cada vez mais agradável, \r\ngraças a uma série de gráficos e técnicas inovadoras introduzidas pelo novo mecanismo gráfico \r\nUnreal Engine 4, que levará a experiência do jogo a uma surpreendente novo nível.', 'CD', '1', 1, 'Jogos_PC/MXGP3.jpg'),
+(15, 'Esporte', 'Computador', 'NFL 20', '90,00', 'Seja o cara de uma franquia da NFL, onde as decisões que você toma importam em sua jornada para se tornar um Superstar da NFL. \r\nCrie seu próprio College Quarterback para disputar os playoffs do College Football National Championship e o NFL \r\nCombine para ter uma chance no NFL Draft e ser o rosto de uma franquia em um novo e personalizado modo de campanha de carreira centrado em você. \r\nDepois de selecionado para uma equipe, participe do novo Scenario Engine de Madden, que gera cenários jogáveis ​​personalizados, eventos e desafios \r\ndinâmicos que constroem a história de sua carreira exclusiva na NFL.', 'Digital', '1', 1, 'Jogos_PC/NFL.jpg'),
+(16, 'Ação', 'Computador', 'The Witcher 3', '250,00', 'A edição de The Witcher 3: Caça Selvagem do Ano reúne o jogo base e todo o conteúdo adicional lançado até o momento.\r\nInclui as expansões Hearts of Stone e Blood & Wine, que oferecem 50 horas de histórias adicionais, além de novos recursos \r\ne novas áreas que expandem o mundo explorável em mais de um terço!\r\nOferece acesso a todo o conteúdo adicional lançado até o momento, incluindo armas, armaduras, missões secundárias, modos de jogo e novas cartas GWENT!\r\nApresenta todas as atualizações técnicas e visuais, bem como uma nova interface do usuário completamente redesenhada \r\ncom base no feedback dos membros da Comunidade Witcher.', 'CD', '1', 1, 'Jogos_PC/Witcher_3.jpg');
 
 -- --------------------------------------------------------
 
@@ -164,6 +183,14 @@ ALTER TABLE `administracao`
   ADD PRIMARY KEY (`id_admin`);
 
 --
+-- Índices para tabela `carrinho`
+--
+ALTER TABLE `carrinho`
+  ADD PRIMARY KEY (`id_carrinho`),
+  ADD KEY `Id_cliente` (`id_cliente`),
+  ADD KEY `Id_jogo` (`id_jogo`);
+
+--
 -- Índices para tabela `categoria`
 --
 ALTER TABLE `categoria`
@@ -179,7 +206,9 @@ ALTER TABLE `clientes`
 -- Índices para tabela `jogo`
 --
 ALTER TABLE `jogo`
-  ADD PRIMARY KEY (`id_jogo`);
+  ADD PRIMARY KEY (`id_jogo`),
+  ADD KEY `id_categoria` (`id_categoria`),
+  ADD KEY `id_plataforma` (`id_plataforma`);
 
 --
 -- Índices para tabela `plataforma`
@@ -195,13 +224,37 @@ ALTER TABLE `plataforma`
 -- AUTO_INCREMENT de tabela `administracao`
 --
 ALTER TABLE `administracao`
-  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT de tabela `carrinho`
+--
+ALTER TABLE `carrinho`
+  MODIFY `id_carrinho` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT de tabela `jogo`
 --
 ALTER TABLE `jogo`
-  MODIFY `id_jogo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_jogo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+
+--
+-- Restrições para despejos de tabelas
+--
+
+--
+-- Limitadores para a tabela `carrinho`
+--
+ALTER TABLE `carrinho`
+  ADD CONSTRAINT `carrinho_ibfk_1` FOREIGN KEY (`Id_cliente`) REFERENCES `clientes` (`cpf`),
+  ADD CONSTRAINT `carrinho_ibfk_2` FOREIGN KEY (`Id_jogo`) REFERENCES `jogo` (`id_jogo`);
+
+--
+-- Limitadores para a tabela `jogo`
+--
+ALTER TABLE `jogo`
+  ADD CONSTRAINT `jogo_ibfk_1` FOREIGN KEY (`id_categoria`) REFERENCES `categoria` (`categoria`),
+  ADD CONSTRAINT `jogo_ibfk_2` FOREIGN KEY (`id_plataforma`) REFERENCES `plataforma` (`plataforma`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

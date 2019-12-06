@@ -63,14 +63,16 @@
                 <li>
                     <a href='?nome=$user&jogo=$jogo[titulo_jogo]'>
                         <figure>
-                            <img src=$jogo[imagem_produto] alt=$jogo[titulo_jogo]>
+                            <img src='$jogo[imagem_produto]' alt='$jogo[titulo_jogo]'>
                             <figcaption>$jogo[titulo_jogo]</figcaption>
                         </figure>
                         <h4> Categoria: $jogo[id_categoria] </h4>
                         <h4> Platafoema: $jogo[id_plataforma] </h4>
                         <h4> Unidades: $jogo[unidades] </h4><br>
                         <span> RS $jogo[preco] </span>
-                        <form action=''>
+                        <form action='classes/comprar.php'  method='POST'>
+                            <input type='hidden' name='nome' value='$user'>
+                            <input type='hidden' name='jogo' value='$jogo[titulo_jogo]'>
                             <input type='submit' value=''>
                         </form>
                     </a>
@@ -83,14 +85,14 @@
                 <li>
                     <a href='?jogo=$jogo[titulo_jogo]'>
                         <figure>
-                            <img src=$jogo[imagem_produto] alt=$jogo[titulo_jogo]>
+                            <img src='$jogo[imagem_produto]' alt='$jogo[titulo_jogo]'>
                             <figcaption>$jogo[titulo_jogo]</figcaption>
                         </figure>
                         <h4> Categoria: $jogo[id_categoria] </h4>
                         <h4> Platafoema: $jogo[id_plataforma] </h4>
                         <h4> Unidades: $jogo[unidades] </h4><br>
                         <span> RS $jogo[preco] </span>
-                        <form action=''>
+                        <form action='classes/comprar.php'>
                             <input type='submit' value=''>
                         </form>
                     </a>

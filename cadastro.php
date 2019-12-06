@@ -47,11 +47,11 @@
                              <div class="col-md-6 mb-4">
                                 <label for="cpf">CPF</label>
                                 <input type="text" class="form-control" id="cpf" placeholder="ex: 999.999.999-99" name="cpf" required>
-                            </div>  
+                            </div>
                             <div class="col-md-6 mb-4">
                                 <label for="tel">Telefone</label>
                                 <input type="text" class="form-control" id="tel" placeholder="ex: (DDD)99999-9999" name="tel" required>
-                            </div>                            
+                            </div>
                         </div>
                         <div class="linha"></div>
                         <h2>Dados de Localização</h2>
@@ -100,7 +100,7 @@
                                     <option>SE</option>
                                     <option>TO</option>
                                 </select>
-                            </div>                          
+                            </div>
                         </div>
                         <div class="linha"></div>
                         <h2>Dados de acesso</h2>
@@ -120,7 +120,6 @@
                     </form>
                 </section>
             </div>
-            
 		</section> <!--	fim div corpo -->
 
 		<footer id="rodape">
