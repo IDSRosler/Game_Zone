@@ -1,3 +1,7 @@
+<?php
+	include_once "classes/manipulacao_dados.php";
+	$user = (isset($_GET["nome"])) ? $_GET["nome"] : false;
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,17 +18,20 @@
 <body>
 	<div id="principal">
 
-		<section id="cabecalho">
+		<section id="cabecalho" class="alin">
 			<?php include_once("cabecalho.php"); ?>
         </section> <!--	fim div cabecalho -->
-        
-        <section id="corpo">
-			<table class="table">
-				<!-- COLOCAR OS MÉTODOS AQUI -->
-			</table>	
-		</section> <!-- fim div corpo --> 
 
-        <footer id="rodape" class="baixo">
+        <section id="corpo">
+			<div class="carrinho">
+				<table class="table">
+					<?php include_once "classes/manipulacao_carrinho.php"; ?>
+				</table>
+			</div>
+			<?php if($flag){ img_carrinho(); } ?>
+		</section> <!-- fim div corpo -->
+
+        <footer id="rodape">
 			<?php include_once("rodape.php"); ?>
 		</footer> <!--	fim div rodape -->
 	</div> <!--	fim div principal -->

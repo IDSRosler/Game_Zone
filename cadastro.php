@@ -1,3 +1,7 @@
+<?php
+	include_once "classes/manipulacao_dados.php";
+	$user = (isset($_GET["nome"])) ? $_GET["nome"] : false;
+?>
 <!DOCTYPE html>
 <html>
 <head>

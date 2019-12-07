@@ -18,11 +18,11 @@
         }
         function connection()
         {
-            $this->link = @mysqli_connect($this->host,$this->user, $this->password) or die("Não foi possivel conectar com o servidor do banco de dados".mysql_error());
-            $this->database = @mysqli_select_db($this->link,$this->database) or die("Não foi possivel conectar a base de dados".mysql_error());
+            $this->link = @mysqli_connect($this->host,$this->user, $this->password) or die("Não foi possivel conectar com o servidor do banco de dados".mysqli_error($this->link));
+            $this->database = @mysqli_select_db($this->link,$this->database) or die("Não foi possivel conectar a base de dados".mysqli_error($this->link));
         }
         function execute($comand){
-            $this->query = @mysqli_query($this->link,$comand) or die("Erro ao executar o comando SQL: $comand <br>".mysql_error());
+            $this->query = @mysqli_query($this->link,$comand) or die("Erro ao executar o comando SQL: $comand <br>".mysqli_error($this->link));
             return $this->query;
         }
         function list($query)

@@ -2,6 +2,8 @@
     include_once "classes/manipulacao_dados.php";
 
     $nome = (isset($_GET["nome"])) ? $_GET["nome"] : false;
+    $flag = false; 
+    $cont = 0;
 
     $con = new data_Manipulation();
 
@@ -20,21 +22,29 @@
         $con->set_search_value("$id_cliente[cpf]");
         $if_jogos = $con->select_from_table_search();
 
-        if($if_jogos)
+        while ($if_jogo = mysqli_fetch_assoc($if_jogos))
         {
+            $con->set_table("jogo");
+            $con->set_fields("*");
+            $con->set_table_value("id_jogo");
+            $con->set_search_value("$if_jogo[id_jogo]");
+            $jogos = $con->select_from_table_search();
+            $jogo = mysqli_fetch_assoc($jogos);
+            $data = date('d/m/Y', strtotime($if_jogo["data_compra"]));
+            $cont++;
             head();
-            while ($if_jogo = mysqli_fetch_assoc($if_jogos))
-            {
-                $con->set_table("jogo");
-                $con->set_fields("*");
-                $con->set_table_value("id_jogo");
-                $con->set_search_value("$if_jogo[id_jogo]");
-                $jogos = $con->select_from_table_search();
-                
-                // CONTINUAR AQUI
-            }
+            body($jogo, $data);
         }
-        
+        if ($cont == 0)
+        {
+            body_empty();
+            $flag=true;
+        }
+    }
+    else
+    {
+        body_empty();
+        $flag=true;
     }
 
     function head()
@@ -57,15 +67,37 @@
         echo "
             <tbody>
                 <tr>
-                    <th scope='row'></th>
-                    <td></td>
-                    <td>$jogo[titulo_jogo]</td>
-                    <td>$jogo[id_plataforma]</td>
-                    <td>$jogo[id_categoria]</td>
-                    <td>$jogo[preco]</td>
-                    <td>$data</td>
+                    <td scope='row'>
+                        <figure  class='img_size'>
+                            <img src='$jogo[imagem_produto]' alt='$jogo[titulo_jogo]'>
+                        </figure>
+                    </td>
+                    <td><h5>$jogo[titulo_jogo]</h5></td>
+                    <td><h5>$jogo[id_plataforma]</h5></td>
+                    <td><h5>$jogo[id_categoria]</h5></td>
+                    <td><h5>R$ $jogo[preco]</h5></td>
+                    <td><h5>$data</h5></td>
                 </tr>
             </tbody>
+        ";
+    }
+    function body_empty()
+    {
+        echo "
+            <div class=color>
+                <tbody>
+                    <tr>
+                        <td><h4>Seu carrinho está vazio</h4></td>
+                    </tr>
+                </tbody>
+            </div>
+        ";
+    }
+    function img_carrinho()
+    {
+        echo "
+            <img class=img_carrinho src='imagens/sonic.png' alt='Sonic'>
+            <div class=footer_position></div>
         ";
     }
 ?>

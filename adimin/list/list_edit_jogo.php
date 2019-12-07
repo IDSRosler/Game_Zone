@@ -6,7 +6,6 @@
         <th scope="col">id_plataforma</th>
         <th scope="col">titulo_jogo</th>
         <th scope="col">preço</th>
-        <th scope="col">descricao</th>
         <th scope="col">conteudo</th>
         <th scope="col">ativo_jogo</th>
         <th scope="col">unidades</th>
@@ -26,7 +25,6 @@
                         <td> $list[id_plataforma] </td>
                         <td> $list[titulo_jogo] </td>
                         <td> $list[preco] </td>
-                        <td> $list[descricao] </td>
                         <td> $list[conteudo] </td>
                         <td> $list[ativo_jogo] </td>
                         <td> $list[unidades] </td>

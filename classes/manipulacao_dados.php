@@ -81,5 +81,11 @@
             $this->command = "SELECT $this->fields FROM $this->table WHERE $this->table_value = '$this->search_value'";
             return self::execute($this->command);
         }
+
+        public function select_from_table_count()
+        {
+            $this->command = "SELECT COUNT($this->fields) AS cont FROM $this->table WHERE $this->table_value = '$this->search_value'";
+            return self::execute($this->command);
+        }
     }
-?>
+?>1
